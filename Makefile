@@ -51,3 +51,30 @@ flamegraph-system:
 	stackcollapse-perf.pl results/system/out.perf > results/system/out.folded
 	flamegraph.pl --title "system-wide, perflab $(VARIANT)" results/system/out.folded > results/system/flamegraph.svg
 	rm results/system/out.perf
+
+.PHONY: time stat report cachegrind stats
+
+# Reduced sizes: valgrind slows o0 down by another ~50x.
+CG_ARGS = --n 256 --mandel 512x512 --iter 256 --sort 1000000 $(ARGS)
+
+time:
+	mkdir -p $(OUT)
+	/usr/bin/time --verbose $(BIN) $(ARGS) 2> $(OUT)/time.txt
+
+stat:
+	mkdir -p $(OUT)
+	perf stat -d -r 5 -o $(OUT)/perf-stat.txt -- $(BIN) $(ARGS)
+
+report:
+	mkdir -p $(OUT)
+	[ -f $(OUT)/perf.data ] || perf record -F $(FG_FREQ) -g -o $(OUT)/perf.data -- $(BIN) $(ARGS)
+	perf report -i $(OUT)/perf.data --stdio --no-children --percent-limit 1 > $(OUT)/perf-report.txt
+	perf report -i $(OUT)/perf.data --stdio --children --percent-limit 1 > $(OUT)/perf-report-children.txt
+
+cachegrind:
+	mkdir -p $(OUT)
+	valgrind --tool=cachegrind --cache-sim=yes --cachegrind-out-file=$(OUT)/cachegrind.out $(BIN) $(CG_ARGS) 2> $(OUT)/cachegrind.txt
+	cg_annotate $(OUT)/cachegrind.out > $(OUT)/cg-annotate.txt
+
+stats:
+	$(foreach v,$(VARIANTS),$(MAKE) time stat report cachegrind VARIANT=$(v) &&) true
