@@ -27,3 +27,27 @@ check: build
 	@out="$$( $(foreach v,$(VARIANTS),bin/$(v)/perflab $(CHECK_ARGS) $(ARGS_$(v));) )"; \
 	echo "$$out"; \
 	[ "$$(echo "$$out" | sort -u | wc -l)" -eq 1 ] && echo "checksums match"
+
+.PHONY: flamegraph flamegraphs flamegraph-system
+
+FG_FREQ = 999
+
+# Each step is echoed so the build process is visible during the demo.
+flamegraph:
+	mkdir -p $(OUT)
+	perf record -F $(FG_FREQ) -g -o $(OUT)/perf.data -- $(BIN) $(ARGS)
+	perf script -i $(OUT)/perf.data > $(OUT)/out.perf
+	stackcollapse-perf.pl $(OUT)/out.perf > $(OUT)/out.folded
+	flamegraph.pl --title "perflab $(VARIANT)" $(OUT)/out.folded > $(OUT)/flamegraph.svg
+	rm $(OUT)/out.perf
+
+flamegraphs:
+	$(foreach v,$(VARIANTS),$(MAKE) flamegraph VARIANT=$(v) &&) true
+
+flamegraph-system:
+	mkdir -p results/system
+	perf record -a -F $(FG_FREQ) -g -o results/system/perf.data -- $(BIN) $(ARGS)
+	perf script -i results/system/perf.data > results/system/out.perf
+	stackcollapse-perf.pl results/system/out.perf > results/system/out.folded
+	flamegraph.pl --title "system-wide, perflab $(VARIANT)" results/system/out.folded > results/system/flamegraph.svg
+	rm results/system/out.perf
