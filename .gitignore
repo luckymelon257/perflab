@@ -1,0 +1,5 @@
+target/
+bin/
+perf.data*
+cachegrind.out.*
+.DS_Store
