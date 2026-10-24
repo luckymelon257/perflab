@@ -102,3 +102,9 @@ asm:
 	$(call emit_asm,arm64-o3-native,-C opt-level=3 -C target-cpu=native)
 	$(call emit_asm,x86-o3,$(X86))
 	$(call emit_asm,x86-avx2,$(X86) -C target-feature=+avx2$(,)+fma)
+
+.PHONY: energy-run
+
+# Called by host/energy.sh through docker exec; prints the program's CPU and wall time.
+energy-run:
+	@/usr/bin/time -f "user_s=%U sys_s=%S wall_s=%e" $(BIN) $(ARGS) 2>&1 >/dev/null | tail -1

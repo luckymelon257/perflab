@@ -1,0 +1,19 @@
+*** Sampled system activity (Fri Oct 24 16:40:00 2026 +0300) (200.10ms elapsed) ***
+
+**** Processor usage ****
+
+CPU 0 active residency:   5.00% (912 MHz: 5.00%)
+CPU 1 active residency:   5.00% (912 MHz: 5.00%)
+
+CPU Power: 500 mW
+GPU Power: 50 mW
+ANE Power: 0 mW
+Combined Power (CPU + GPU + ANE): 600 mW
+
+*** Sampled system activity (Fri Oct 24 16:40:00 2026 +0300) (200.10ms elapsed) ***
+
+CPU 0 active residency:   5.00% (912 MHz: 5.00%)
+CPU 1 active residency:   5.00% (912 MHz: 5.00%)
+
+CPU Power: 500 mW
+Combined Power (CPU + GPU + ANE): 600 mW
