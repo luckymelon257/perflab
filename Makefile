@@ -11,6 +11,7 @@ ARGS = $(ARGS_$(VARIANT))
 CHECK_ARGS = --n 256 --mandel 512x512 --iter 256 --sort 1000000
 
 FP = -C force-frame-pointers=yes
+, := ,
 
 .PHONY: build check
 
@@ -78,3 +79,26 @@ cachegrind:
 
 stats:
 	$(foreach v,$(VARIANTS),$(MAKE) time stat report cachegrind VARIANT=$(v) &&) true
+
+.PHONY: asm
+
+ASM = results/asm
+# Prints only the matmul_ijk and matmul_ikj bodies from a full .s file.
+EXTRACT_MATMUL = awk '/^_ZN7perflab10matmul_i(jk|kj)/{p=1} p{print} /\.cfi_endproc/{p=0}'
+
+# rustc is called directly: cargo rustc --emit asm still links, and there is no x86_64 linker here.
+# $(1) output name, $(2) rustc flags
+define emit_asm
+	rustc --edition 2021 --crate-name perflab $(FP) $(2) --emit asm -o $(ASM)/$(1).s src/main.rs
+	$(EXTRACT_MATMUL) $(ASM)/$(1).s > $(ASM)/$(1)-matmul.s
+endef
+
+X86 = --target x86_64-unknown-linux-gnu -C opt-level=3
+
+asm:
+	mkdir -p $(ASM)
+	$(call emit_asm,arm64-o0,-C opt-level=0)
+	$(call emit_asm,arm64-o3,-C opt-level=3)
+	$(call emit_asm,arm64-o3-native,-C opt-level=3 -C target-cpu=native)
+	$(call emit_asm,x86-o3,$(X86))
+	$(call emit_asm,x86-avx2,$(X86) -C target-feature=+avx2$(,)+fma)
