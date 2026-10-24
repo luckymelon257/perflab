@@ -11,7 +11,7 @@ docker build -t perflab .
 ./run.sh make build
 ```
 
-`open` is the macOS command that opens a file in the default application (Safari for SVG).
+`open -a Safari` opens the interactive SVG in Safari (zoom on click, search).
 
 ## 0. Variants and checksums
 
@@ -40,7 +40,7 @@ Every command is printed before it runs.
 ```
 
 ```sh
-open results/o3/flamegraph.svg
+open -a Safari results/o3/flamegraph.svg
 ```
 
 The same for the whole VM (`perf record -a`, all CPUs):
@@ -50,7 +50,7 @@ The same for the whole VM (`perf record -a`, all CPUs):
 ```
 
 ```sh
-open results/system/flamegraph.svg
+open -a Safari results/system/flamegraph.svg
 ```
 
 ## 2.1. /usr/bin/time --verbose
@@ -147,7 +147,7 @@ cat results/compare.md
 ## 4.3. Flame graphs before and after
 
 ```sh
-open results/o0/flamegraph.svg results/o3/flamegraph.svg results/o3-native/flamegraph.svg
+open -a Safari results/o0/flamegraph.svg results/o3/flamegraph.svg results/o3-native/flamegraph.svg
 ```
 
 ## 4.4. Energy before and after
