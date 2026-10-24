@@ -1,0 +1,16 @@
+[package]
+name = "perflab"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[profile.o0]
+inherits = "dev"
+opt-level = 0
+debug = true
+
+[profile.o3]
+inherits = "release"
+opt-level = 3
+debug = true
