@@ -64,7 +64,7 @@ Tests: `./run.sh cargo test` (benchmark functions) and `bash host/test_energy.sh
 
 `host/energy.sh` starts a long-lived container, records 10 s of idle power, then
 records power while the program runs inside it (`docker exec`), and repeats this
-three times. It reports:
+(3 times by default; the committed results use `host/energy.sh <variant> 5`). It reports:
 
 - `e_system_j`: energy of the whole system (CPU + GPU + ANE) while the program runs;
 - `e_prog_delta_j`: CPU energy above the idle baseline;

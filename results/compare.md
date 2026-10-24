@@ -15,6 +15,6 @@ Default problem size, see Makefile for build flags. Cachegrind rows use the redu
 | Data refs, Dr+Dw (cachegrind) | 6053397052 | 113054961 | 92100041 | 65.73x |
 | D1 misses (cachegrind) | 19089862 | 18971710 | 3113596 | 6.13x |
 | LL misses (cachegrind) | 2527818 | 2513481 | 1350310 | 1.87x |
-| System energy, J (powermetrics) | n/a | n/a | n/a | n/a |
-| Program energy, J (run - idle) | n/a | n/a | n/a | n/a |
-| Program energy, J (CPU-time share) | n/a | n/a | n/a | n/a |
+| System energy, J (powermetrics) | 154.29 | 20.26 | 12.60 | 12.25x |
+| Program energy, J (run - idle) | 126.70 | 15.21 | 8.60 | 14.73x |
+| Program energy, J (CPU-time share) | 55.25 | 4.98 | 3.09 | 17.88x |

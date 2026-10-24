@@ -1,0 +1,5 @@
+p_idle_cpu_mw=883 p_run_cpu_mw=5816 p_run_combined_mw=6048 wall_s=1.87 e_system_j=11.311 e_prog_delta_j=9.225 e_prog_share_j=2.749
+p_idle_cpu_mw=2287 p_run_cpu_mw=5335 p_run_combined_mw=5543 wall_s=1.86 e_system_j=10.309 e_prog_delta_j=5.669 e_prog_share_j=3.185
+p_idle_cpu_mw=1896 p_run_cpu_mw=8396 p_run_combined_mw=8764 wall_s=2.11 e_system_j=18.493 e_prog_delta_j=13.714 e_prog_share_j=3.406
+p_idle_cpu_mw=2331 p_run_cpu_mw=7202 p_run_combined_mw=7680 wall_s=1.91 e_system_j=14.670 e_prog_delta_j=9.303 e_prog_share_j=3.718
+p_idle_cpu_mw=1585 p_run_cpu_mw=4400 p_run_combined_mw=4552 wall_s=1.80 e_system_j=8.193 e_prog_delta_j=5.068 e_prog_share_j=2.374
