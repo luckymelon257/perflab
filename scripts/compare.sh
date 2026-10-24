@@ -21,7 +21,7 @@ energy()     {
 row() {
     local name=$1; shift
     local vals=("$@")
-    local ratio="n/a"
+    local ratio="-"
     if [[ ${vals[0]} =~ ^[0-9.]+$ && ${vals[2]} =~ ^[0-9.]+$ ]] && awk "BEGIN { exit !(${vals[2]} > 0) }"; then
         ratio=$(awk "BEGIN { printf \"%.2fx\", ${vals[0]} / ${vals[2]} }")
     fi

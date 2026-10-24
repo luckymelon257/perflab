@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Run a command inside the perflab container with the repo mounted at /lab.
 # --privileged is required for perf_event_open inside the VM.
 set -euo pipefail
 flags=-i

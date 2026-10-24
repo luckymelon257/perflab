@@ -3,3 +3,5 @@ bin/
 perf.data*
 cachegrind.out.*
 .DS_Store
+results/*/out.folded
+results/*/cachegrind.out

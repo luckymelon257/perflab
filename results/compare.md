@@ -9,7 +9,7 @@ Default problem size, see Makefile for build flags. Cachegrind rows use the redu
 | Minor page faults (time) | 10628 | 10631 | 10629 | 1.00x |
 | Involuntary ctx switches (time) | 115 | 1 | 1 | 115.00x |
 | task-clock, ms (perf stat, mean of 5) | 23716.86 | 2623.93 | 1864.78 | 12.72x |
-| task-clock noise, +-% (perf stat) | 0.50% | 1.07% | 0.47% | n/a |
+| task-clock noise, +-% (perf stat) | 0.50% | 1.07% | 0.47% | - |
 | page-faults (perf stat) | 10607 | 10606 | 10606 | 1.00x |
 | Instructions, Ir (cachegrind) | 10315774586 | 549204220 | 354978578 | 29.06x |
 | Data refs, Dr+Dw (cachegrind) | 6053397052 | 113054961 | 92100041 | 65.73x |
