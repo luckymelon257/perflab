@@ -17,4 +17,13 @@ got=$(calc idle-high.log)
 echo "$got" | grep -q '^warning: run power below idle' || { echo "FAIL warning: $got"; exit 1; }
 echo "$got" | grep -q 'e_prog_delta_j=0.000' || { echo "FAIL clamp: $got"; exit 1; }
 
+# Program longer than the recorded window: window started too late.
+got=$(calc idle.log 0.7)
+echo "$got" | grep -q '^warning: power window shorter than the program' || { echo "FAIL short window: $got"; exit 1; }
+
+# No per-CPU residency lines: the share method cannot be computed.
+grep -v 'active residency' testdata/run.log > testdata/run-noresidency.log
+got=$(awk -v user_s=0.25 -v sys_s=0.05 -v wall_s=0.6 -f energy.awk testdata/idle.log testdata/run-noresidency.log 2>&1)
+echo "$got" | grep -q 'e_prog_share_j=n/a' || { echo "FAIL share n/a: $got"; exit 1; }
+
 echo "energy.awk: all checks passed"

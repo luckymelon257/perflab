@@ -27,7 +27,9 @@ build:
 check: build
 	@out="$$( $(foreach v,$(VARIANTS),bin/$(v)/perflab $(CHECK_ARGS) $(ARGS_$(v));) )"; \
 	echo "$$out"; \
-	[ "$$(echo "$$out" | sort -u | wc -l)" -eq 1 ] && echo "checksums match"
+	[ "$$(echo "$$out" | grep -c '^matmul=')" -eq 3 ] || { echo "a variant failed"; exit 1; }; \
+	[ "$$(echo "$$out" | sort -u | wc -l)" -eq 1 ] || { echo "checksums differ"; exit 1; }; \
+	echo "checksums match"
 
 .PHONY: flamegraph flamegraphs flamegraph-system
 

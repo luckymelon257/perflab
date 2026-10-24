@@ -28,6 +28,10 @@ END {
     idle_cpu = cpu[1] / n[1] / 1000
     idle_comb = comb[1] / n[1] / 1000
     pad = window_s - wall_s
+    if (pad < 0) {
+        print "warning: power window shorter than the program, energy is underestimated"
+        pad = 0
+    }
 
     e_system = e_win_comb - idle_comb * pad
     e_delta = e_win_cpu - idle_cpu * window_s
@@ -35,9 +39,9 @@ END {
         print "warning: run power below idle, program energy clamped to 0"
         e_delta = 0
     }
-    e_share = busy_s > 0 ? e_win_cpu * (user_s + sys_s) / busy_s : 0
+    e_share = busy_s > 0 ? sprintf("%.3f", e_win_cpu * (user_s + sys_s) / busy_s) : "n/a"
 
-    printf "p_idle_cpu_mw=%.0f p_run_cpu_mw=%.0f p_run_combined_mw=%.0f wall_s=%s e_system_j=%.3f e_prog_delta_j=%.3f e_prog_share_j=%.3f\n", \
+    printf "p_idle_cpu_mw=%.0f p_run_cpu_mw=%.0f p_run_combined_mw=%.0f wall_s=%s e_system_j=%.3f e_prog_delta_j=%.3f e_prog_share_j=%s\n", \
         idle_cpu * 1000, (e_win_cpu - idle_cpu * pad) / wall_s * 1000, e_system / wall_s * 1000, \
         wall_s, e_system, e_delta, e_share
 }

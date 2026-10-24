@@ -14,7 +14,7 @@ cg_value()   { awk -v k="$2" 'index($0, k) { gsub(",", "", $4); print $4; exit }
 energy()     {
     f="results/$1/energy.txt"
     [ -f "$f" ] || return 0
-    awk -v k="$2" '!/^warning/ { for (i = 1; i <= NF; i++) { split($i, kv, "="); if (kv[1] == k) { s += kv[2]; n++ } } }
+    awk -v k="$2" '!/^warning/ { for (i = 1; i <= NF; i++) { split($i, kv, "="); if (kv[1] == k && kv[2] ~ /^[0-9.]+$/) { s += kv[2]; n++ } } }
                    END { if (n) printf "%.2f", s / n }' "$f"
 }
 
