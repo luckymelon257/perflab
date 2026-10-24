@@ -1,0 +1,261 @@
+--------------------------------------------------------------------------------
+I1 cache:         16384 B, 64 B, 4-way associative
+D1 cache:         16384 B, 64 B, 4-way associative
+LL cache:         262144 B, 64 B, 8-way associative
+Command:          bin/o0/perflab --n 256 --mandel 512x512 --iter 256 --sort 1000000
+Data file:        results/o0/cachegrind.out
+Events recorded:  Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Events shown:     Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Event sort order: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Thresholds:       0.1 100 100 100 100 100 100 100 100
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+Ir                      I1mr             ILmr           Dr                     D1mr                DLmr               Dw                     D1mw             DLmw             
+--------------------------------------------------------------------------------
+10,315,774,586 (100.0%) 965,662 (100.0%) 4,052 (100.0%) 2,984,470,682 (100.0%) 18,824,873 (100.0%) 2,319,160 (100.0%) 3,068,926,370 (100.0%) 264,989 (100.0%) 204,606 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir                     I1mr             ILmr         Dr                   D1mr                DLmr               Dw                   D1mw             DLmw              file:function
+--------------------------------------------------------------------------------
+1,026,692,899 ( 9.95%)      11 ( 0.00%)  11 ( 0.27%) 370,017,284 (12.40%) 16,853,826 (89.53%) 1,181,843 (50.96%) 202,246,165 ( 6.59%)  65,536 (24.73%)  65,536 (32.03%)  /lab/src/main.rs:perflab::matmul_ijk
+  792,776,595 ( 7.69%)       7 ( 0.00%)   7 ( 0.17%) 142,293,235 ( 4.77%)          0                  0          345,569,285 (11.26%)   8,321 ( 3.14%)     453 ( 0.22%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:core::ptr::copy_nonoverlapping::precondition_check
+  767,179,872 ( 7.44%)       3 ( 0.00%)   3 ( 0.07%) 239,743,710 ( 8.03%)          0                  0          335,641,194 (10.94%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/sort/unstable/quicksort.rs:core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+  584,901,732 ( 5.67%)       3 ( 0.00%)   3 ( 0.07%) 164,395,860 ( 5.51%)          0                  0          219,304,995 ( 7.15%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/iter/range.rs:<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+  559,475,730 ( 5.42%)       3 ( 0.00%)   3 ( 0.07%)  55,947,573 ( 1.87%)          0                  0          261,088,674 ( 8.51%)   6,523 ( 2.46%)     338 ( 0.17%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:core::ptr::copy::precondition_check
+  550,154,273 ( 5.33%)      10 ( 0.00%)  10 ( 0.25%) 203,048,044 ( 6.80%)          0                  0           65,690,823 ( 2.14%)       0                0           /lab/src/main.rs:perflab::mandelbrot
+  463,504,506 ( 4.49%)       3 ( 0.00%)   3 ( 0.07%) 207,777,882 ( 6.96%)          0                  0                    0                0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+  447,207,310 ( 4.34%)       4 ( 0.00%)   4 ( 0.10%) 121,965,630 ( 4.09%)          0                  0          121,965,630 ( 3.97%)   4,528 ( 1.71%)     264 ( 0.13%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/mod.rs:core::ptr::copy_nonoverlapping::precondition_check
+  447,207,310 ( 4.34%)       2 ( 0.00%)   2 ( 0.05%) 223,603,655 ( 7.49%)          0                  0           60,982,815 ( 1.99%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/const_ptr.rs:core::ptr::copy_nonoverlapping::precondition_check
+  347,095,788 ( 3.36%)       2 ( 0.00%)   2 ( 0.05%)  23,380,611 ( 0.78%)          0                  0          121,965,630 ( 3.97%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/num/uint_macros.rs:core::ub_checks::maybe_is_nonoverlapping::runtime
+  345,569,285 ( 3.35%)   1,085 ( 0.11%)  26 ( 0.64%) 101,638,025 ( 3.41%)          0                  0          162,620,840 ( 5.30%)  16,079 ( 6.07%)     897 ( 0.44%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/intrinsics/mod.rs:core::ub_checks::maybe_is_nonoverlapping::runtime
+  308,531,390 ( 2.99%)       3 ( 0.00%)   3 ( 0.07%)  82,275,040 ( 2.76%)          0                  0          143,981,310 ( 4.69%)   3,358 ( 1.27%)     298 ( 0.15%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ops/function.rs:core::ops::function::FnMut::call_mut
+  298,387,056 ( 2.89%)       3 ( 0.00%)   3 ( 0.07%) 111,895,146 ( 3.75%)          0                  0           18,649,191 ( 0.61%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/const_ptr.rs:core::ptr::copy::precondition_check
+  261,205,364 ( 2.53%)       5 ( 0.00%)   4 ( 0.10%)  37,315,052 ( 1.25%)          0                  0          130,602,682 ( 4.26%)       3 ( 0.00%)       3 ( 0.00%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:core::num::<impl usize>::unchecked_add::precondition_check
+  191,794,968 ( 1.86%)       0            0           79,914,570 ( 2.68%)    466,842 ( 2.48%)   215,770 ( 9.30%)  79,914,570 ( 2.60%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/mod.rs:core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+  186,491,910 ( 1.81%)       1 ( 0.00%)   1 ( 0.02%)  37,298,382 ( 1.25%)          0                  0           37,298,382 ( 1.22%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/num/uint_macros.rs:core::ptr::copy::precondition_check
+  182,948,445 ( 1.77%)       1 ( 0.00%)   1 ( 0.02%)  20,327,605 ( 0.68%)          0                  0           40,655,210 ( 1.32%)     944 ( 0.36%)      45 ( 0.02%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/num/uint_macros.rs:core::ptr::copy_nonoverlapping::precondition_check
+  182,367,360 ( 1.77%)       0            0           36,473,472 ( 1.22%)          0                  0          109,420,416 ( 3.57%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/iter/range.rs:<usize as core::iter::range::Step>::forward_unchecked
+  164,727,405 ( 1.60%)       1 ( 0.00%)   1 ( 0.02%)  36,606,090 ( 1.23%)          0                  0           54,909,135 ( 1.79%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/iter/range.rs:core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next
+  164,130,624 ( 1.59%)       1 ( 0.00%)   1 ( 0.02%)  72,946,944 ( 2.44%)          0                  0                    0                0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:<usize as core::iter::range::Step>::forward_unchecked
+  159,829,140 ( 1.55%)       1 ( 0.00%)   1 ( 0.02%)           0                   0                  0           47,948,742 ( 1.56%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/mut_ptr.rs:core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+  159,567,834 ( 1.55%)       0            0           78,257,414 ( 2.62%)          0                  0           40,655,210 ( 1.32%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:core::ub_checks::maybe_is_nonoverlapping::runtime
+  142,293,235 ( 1.38%)       0            0          142,293,235 ( 4.77%)          0                  0                    0                0                0           /lab/src/main.rs:core::ptr::copy_nonoverlapping::precondition_check
+  123,703,344 ( 1.20%)      10 ( 0.00%)  10 ( 0.25%)  17,173,944 ( 0.58%)        432 ( 0.00%)        36 ( 0.00%)   1,735,376 ( 0.06%)     825 ( 0.31%)      78 ( 0.04%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/sort/unstable/quicksort.rs:core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic
+  110,394,115 ( 1.07%)  45,359 ( 4.70%)  60 ( 1.48%)  12,836,525 ( 0.43%)          0                  0           59,048,015 ( 1.92%)   2,468 ( 0.93%)     101 ( 0.05%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/sort/shared/smallsort.rs:core::slice::sort::shared::smallsort::swap_if_less
+   93,245,955 ( 0.90%)       1 ( 0.00%)   1 ( 0.02%)  37,298,382 ( 1.25%)          0                  0           18,649,191 ( 0.61%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/mod.rs:core::ptr::copy::precondition_check
+   82,275,016 ( 0.80%)       0            0           41,137,508 ( 1.38%)  1,367,746 ( 7.27%)   790,006 (34.06%)           0                0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/cmp.rs:core::ops::function::FnMut::call_mut
+   74,630,104 ( 0.72%)       0            0                    0                   0                  0                    0                0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/num/uint_macros.rs:core::num::<impl usize>::unchecked_add::precondition_check
+   64,182,625 ( 0.62%)       1 ( 0.00%)   1 ( 0.02%)  20,538,440 ( 0.69%)          0                  0                    0                0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:core::slice::sort::shared::smallsort::swap_if_less
+   61,615,320 ( 0.60%)       1 ( 0.00%)   1 ( 0.02%)  15,403,830 ( 0.52%)          0                  0           15,403,830 ( 0.50%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/hint.rs:core::slice::sort::shared::smallsort::swap_if_less
+   60,982,815 ( 0.59%)       0            0                    0                   0                  0           40,655,210 ( 1.32%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/fmt/rt.rs:core::ptr::copy_nonoverlapping::precondition_check
+   60,982,815 ( 0.59%)       0            0                    0                   0                  0           20,327,605 ( 0.66%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/intrinsics/mod.rs:core::ptr::copy_nonoverlapping::precondition_check
+   55,947,573 ( 0.54%)       0            0                    0                   0                  0           37,298,382 ( 1.22%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/fmt/rt.rs:core::ptr::copy::precondition_check
+   46,314,718 ( 0.45%) 110,585 (11.45%) 210 ( 5.18%)  13,154,786 ( 0.44%)          0                  0           19,666,021 ( 0.64%)      40 ( 0.02%)       1 ( 0.00%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/sort/shared/smallsort.rs:core::slice::sort::shared::smallsort::bidirectional_merge
+   46,211,490 ( 0.45%)       2 ( 0.00%)   2 ( 0.05%)  20,538,440 ( 0.69%)          0                  0           17,971,135 ( 0.59%)     338 ( 0.13%)      17 ( 0.01%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/mod.rs:core::slice::sort::shared::smallsort::swap_if_less
+   44,095,246 ( 0.43%)  19,997 ( 2.07%)  34 ( 0.84%)   7,781,514 ( 0.26%)          0                  0           20,750,704 ( 0.68%)       1 ( 0.00%)       1 ( 0.00%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:core::slice::raw::from_raw_parts_mut::precondition_check
+   40,655,210 ( 0.39%)       0            0                    0                   0                  0           40,655,210 ( 1.32%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/const_ptr.rs:core::ub_checks::maybe_is_nonoverlapping::runtime
+   38,509,575 ( 0.37%)       2 ( 0.00%)   2 ( 0.05%)           0                   0                  0           15,403,830 ( 0.50%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/mut_ptr.rs:core::slice::sort::shared::smallsort::swap_if_less
+   37,298,382 ( 0.36%)       0            0           37,298,382 ( 1.25%)          0                  0                    0                0                0           /lab/src/main.rs:core::ptr::copy::precondition_check
+   37,000,073 ( 0.36%)       8 ( 0.00%)   8 ( 0.20%)   9,000,016 ( 0.30%)          2 ( 0.00%)         2 ( 0.00%)   7,000,022 ( 0.23%)       2 ( 0.00%)       2 ( 0.00%)  /lab/src/main.rs:perflab::sort_hist
+   36,606,090 ( 0.35%)       0            0           36,606,090 ( 1.23%)          0                  0                    0                0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/cmp.rs:<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+   35,000,334 ( 0.34%)       7 ( 0.00%)   7 ( 0.17%)   8,000,076 ( 0.27%)          0                  0           14,000,134 ( 0.46%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/iter/macros.rs:<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next
+   32,000,000 ( 0.31%)       2 ( 0.00%)   2 ( 0.05%)  19,000,000 ( 0.64%)          0                  0            7,000,000 ( 0.23%)       0                0           /lab/src/main.rs:perflab::sort_hist::{{closure}}
+   28,240,355 ( 0.27%)  23,287 ( 2.41%)  31 ( 0.77%)           0                   0                  0           15,403,830 ( 0.50%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/mem/maybe_uninit.rs:core::slice::sort::shared::smallsort::swap_if_less
+   24,333,056 ( 0.24%)      12 ( 0.00%)  11 ( 0.27%)   4,919,040 ( 0.16%)          0                  0            9,772,544 ( 0.32%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/iter/adapters/map.rs:core::iter::adapters::map::map_fold::{{closure}}
+   23,752,590 ( 0.23%)      10 ( 0.00%)  10 ( 0.25%)   5,655,378 ( 0.19%)          0                  0            7,917,534 ( 0.26%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/iter/traits/iterator.rs:core::iter::traits::iterator::Iterator::fold
+   22,339,751 ( 0.22%)  54,542 ( 5.65%)  86 ( 2.12%)   6,102,796 ( 0.20%)          0                  0            8,556,451 ( 0.28%)      50 ( 0.02%)       4 ( 0.00%)  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/sort/shared/smallsort.rs:core::slice::sort::shared::smallsort::insert_tail
+   19,000,000 ( 0.18%)       2 ( 0.00%)   2 ( 0.05%)   4,000,000 ( 0.13%)          0                  0            9,000,000 ( 0.29%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/index.rs:<usize as core::slice::index::SliceIndex<[T]>>::index_mut
+   18,236,736 ( 0.18%)       0            0                    0                   0                  0                    0                0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/num/uint_macros.rs:<usize as core::iter::range::Step>::forward_unchecked
+   14,000,000 ( 0.14%)       1 ( 0.00%)   1 ( 0.02%)   6,000,000 ( 0.20%)          0                  0                    0                0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:<alloc::vec::Vec<T,A> as core::ops::index::IndexMut<I>>::index_mut
+   14,000,000 ( 0.14%)       1 ( 0.00%)   1 ( 0.02%)   3,000,000 ( 0.10%)    125,001 ( 0.66%)   125,001 ( 5.39%)   8,000,000 ( 0.26%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/internal_macros.rs:<&u64 as core::ops::arith::Rem<u64>>::rem
+   14,000,000 ( 0.14%)       1 ( 0.00%)   1 ( 0.02%)   3,000,000 ( 0.10%)          0                  0            8,000,000 ( 0.26%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/alloc/src/vec/mod.rs:<alloc::vec::Vec<T,A> as core::ops::index::IndexMut<I>>::index_mut
+   11,310,720 ( 0.11%)       4 ( 0.00%)   4 ( 0.10%)   3,393,216 ( 0.11%)          0                  0            4,524,288 ( 0.15%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/alloc/src/vec/mod.rs:alloc::vec::Vec<T,A>::extend_trusted::{{closure}}
+   11,310,720 ( 0.11%)       4 ( 0.00%)   4 ( 0.10%)   2,262,144 ( 0.08%)          0                  0            4,524,288 ( 0.15%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/iter/traits/iterator.rs:core::iter::traits::iterator::Iterator::for_each::call::{{closure}}
+   11,225,866 ( 0.11%)  32,730 ( 3.39%)  62 ( 1.53%)   4,342,824 ( 0.15%)          0                  0              354,998 ( 0.01%)       0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:core::slice::sort::shared::smallsort::bidirectional_merge
+   10,555,905 ( 0.10%)       1 ( 0.00%)   1 ( 0.02%)   3,518,635 ( 0.12%)          0                  0                    0                0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs:core::slice::sort::shared::smallsort::insert_tail
+   10,375,352 ( 0.10%)       6 ( 0.00%)   6 ( 0.15%)   3,890,757 ( 0.13%)          0                  0                    0                0                0           /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/const_ptr.rs:core::slice::raw::from_raw_parts_mut::precondition_check
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /lab/src/main.rs
+--------------------------------------------------------------------------------
+Ir                   I1mr        ILmr        Dr                   D1mr                DLmr               Dw                   D1mw            DLmw            
+
+-- line 7 ----------------------------------------
+          .           .           .                    .                   .                  .                    .               .               .               mandel_w: usize,
+          .           .           .                    .                   .                  .                    .               .               .               mandel_h: usize,
+          .           .           .                    .                   .                  .                    .               .               .               iter: u32,
+          .           .           .                    .                   .                  .                    .               .               .               sort_len: usize,
+          .           .           .                    .                   .                  .                    .               .               .               ikj: bool,
+          .           .           .                    .                   .                  .                    .               .               .           }
+          .           .           .                    .                   .                  .                    .               .               .           
+          .           .           .                    .                   .                  .                    .               .               .           #[inline(never)]
+         20 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                   17 ( 0.00%)      0               0           fn matmul_ijk(a: &[f32], b: &[f32], c: &mut [f32], n: usize) {
+      2,827 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)         513 ( 0.00%)          0                  0                1,028 ( 0.00%)      0               0               for i in 0..n {
+    723,712 ( 0.01%)  1 ( 0.00%)  1 ( 0.02%)     131,328 ( 0.00%)          0                  0              263,168 ( 0.01%)      0               0                   for j in 0..n {
+    131,072 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0               65,536 ( 0.00%)      0               0                       let mut sum = 0.0;
+185,270,272 ( 1.80%)  1 ( 0.00%)  1 ( 0.02%)  33,619,968 ( 1.13%)          0                  0           67,371,008 ( 2.20%)      0               0                       for k in 0..n {
+553,648,128 ( 5.37%)  1 ( 0.00%)  1 ( 0.02%)  50,331,648 ( 1.69%) 16,853,825 (89.53%) 1,181,842 (50.96%) 134,217,728 ( 4.37%)      0               0                           sum += a[i * n + k] * b[k * n + j];
+          .           .           .                    .                   .                  .                    .               .               .                       }
+  1,048,576 ( 0.01%)  0           0               65,536 ( 0.00%)          0                  0              327,680 ( 0.01%) 65,536 (24.73%) 65,536 (32.03%)              c[i * n + j] = sum;
+          .           .           .                    .                   .                  .                    .               .               .                   }
+          .           .           .                    .                   .                  .                    .               .               .               }
+          4 ( 0.00%)  0           0                    3 ( 0.00%)          1 ( 0.00%)         1 ( 0.00%)           0               0               0           }
+          .           .           .                    .                   .                  .                    .               .               .           
+          .           .           .                    .                   .                  .                    .               .               .           // Inner loop walks rows of B and C contiguously, so it has no bounds checks and vectorizes.
+          .           .           .                    .                   .                  .                    .               .               .           #[inline(never)]
+          .           .           .                    .                   .                  .                    .               .               .           fn matmul_ikj(a: &[f32], b: &[f32], c: &mut [f32], n: usize) {
+          .           .           .                    .                   .                  .                    .               .               .               c.fill(0.0);
+          .           .           .                    .                   .                  .                    .               .               .               for i in 0..n {
+          .           .           .                    .                   .                  .                    .               .               .                   let c_row = &mut c[i * n..(i + 1) * n];
+          .           .           .                    .                   .                  .                    .               .               .                   for k in 0..n {
+-- line 33 ----------------------------------------
+-- line 35 ----------------------------------------
+          .           .           .                    .                   .                  .                    .               .               .                       for (cj, bj) in c_row.iter_mut().zip(&b[k * n..(k + 1) * n]) {
+          .           .           .                    .                   .                  .                    .               .               .                           *cj += aik * bj;
+          .           .           .                    .                   .                  .                    .               .               .                       }
+          .           .           .                    .                   .                  .                    .               .               .                   }
+          .           .           .                    .                   .                  .                    .               .               .               }
+          .           .           .                    .                   .                  .                    .               .               .           }
+          .           .           .                    .                   .                  .                    .               .               .           
+          .           .           .                    .                   .                  .                    .               .               .           #[inline(never)]
+         10 ( 0.00%)  2 ( 0.00%)  2 ( 0.05%)           0                   0                  0                    8 ( 0.00%)      0               0           fn mandelbrot(w: usize, h: usize, max_iter: u32) -> u64 {
+          1 ( 0.00%)  0           0                    0                   0                  0                    1 ( 0.00%)      0               0               let mut total = 0u64;
+      5,130 ( 0.00%)  0           0                1,025 ( 0.00%)          0                  0                1,540 ( 0.00%)      0               0               for py in 0..h {
+      5,632 ( 0.00%)  0           0                    0                   0                  0                1,024 ( 0.00%)      0               0                   let y0 = -1.5 + 3.0 * (py as f64 + 0.5) / h as f64;
+  2,627,072 ( 0.03%)  2 ( 0.00%)  2 ( 0.05%)     524,800 ( 0.02%)          0                  0              788,480 ( 0.03%)      0               0                   for px in 0..w {
+  3,145,728 ( 0.03%)  0           0                    0                   0                  0              524,288 ( 0.02%)      0               0                       let x0 = -2.0 + 3.0 * (px as f64 + 0.5) / w as f64;
+  2,359,296 ( 0.02%)  1 ( 0.00%)  1 ( 0.02%)     786,432 ( 0.03%)          0                  0            1,572,864 ( 0.05%)      0               0                       let (mut x, mut y, mut it) = (0.0f64, 0.0f64, 0u32);
+190,106,000 ( 1.84%)  1 ( 0.00%)  1 ( 0.02%)  63,411,714 ( 2.12%)          0                  0                    0               0               0                       while it < max_iter && x * x + y * y <= 4.0 {
+112,100,994 ( 1.09%)  0           0           49,822,664 ( 1.67%)          0                  0           12,455,666 ( 0.41%)      0               0                           let xt = x * x - y * y + x0;
+ 87,189,662 ( 0.85%)  1 ( 0.00%)  1 ( 0.02%)  24,911,332 ( 0.83%)          0                  0           12,455,666 ( 0.41%)      0               0                           y = 2.0 * x * y + y0;
+ 12,455,666 ( 0.12%)  0           0                    0                   0                  0           12,455,666 ( 0.41%)      0               0                           x = xt;
+ 87,189,662 ( 0.85%)  1 ( 0.00%)  1 ( 0.02%)  12,455,666 ( 0.42%)          0                  0           24,911,332 ( 0.81%)      0               0                           it += 1;
+          .           .           .                    .                   .                  .                    .               .               .                       }
+  2,359,296 ( 0.02%)  0           0              524,288 ( 0.02%)          0                  0              524,288 ( 0.02%)      0               0                       total += it as u64;
+          .           .           .                    .                   .                  .                    .               .               .                   }
+          .           .           .                    .                   .                  .                    .               .               .               }
+          1 ( 0.00%)  0           0                    1 ( 0.00%)          0                  0                    0               0               0               total
+          3 ( 0.00%)  0           0                    2 ( 0.00%)          0                  0                    0               0               0           }
+          .           .           .                    .                   .                  .                    .               .               .           
+          .           .           .                    .                   .                  .                    .               .               .           #[inline(never)]
+         12 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                    9 ( 0.00%)      0               0           fn sort_hist(len: usize, seed: u64, bins: usize) -> Vec<u64> {
+          8 ( 0.00%)  0           0                    1 ( 0.00%)          0                  0                    2 ( 0.00%)      0               0               let mut s = seed.max(1);
+          .           .           .                    .                   .                  .                    .               .               .               let mut values: Vec<u64> = (0..len)
+  6,000,005 ( 0.06%)  1 ( 0.00%)  1 ( 0.02%)           1 ( 0.00%)          0                  0            4,000,001 ( 0.13%)      0               0                   .map(|_| {
+  7,000,000 ( 0.07%)  1 ( 0.00%)  1 ( 0.02%)   5,000,000 ( 0.17%)          0                  0            1,000,000 ( 0.03%)      0               0                       s ^= s << 13;
+  7,000,000 ( 0.07%)  0           0            5,000,000 ( 0.17%)          0                  0            1,000,000 ( 0.03%)      0               0                       s ^= s >> 7;
+  7,000,000 ( 0.07%)  0           0            5,000,000 ( 0.17%)          0                  0            1,000,000 ( 0.03%)      0               0                       s ^= s << 17;
+  2,000,000 ( 0.02%)  0           0            2,000,000 ( 0.07%)          0                  0                    0               0               0                       s
+  3,000,000 ( 0.03%)  0           0            2,000,000 ( 0.07%)          0                  0                    0               0               0                   })
+          2 ( 0.00%)  0           0                    1 ( 0.00%)          0                  0                    0               0               0                   .collect();
+          6 ( 0.00%)  2 ( 0.00%)  2 ( 0.05%)           0                   0                  0                    2 ( 0.00%)      0               0               values.sort_unstable();
+          6 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                    0               0               0               let mut hist = vec![0u64; bins];
+ 13,000,017 ( 0.13%)  1 ( 0.00%)  1 ( 0.02%)   2,000,001 ( 0.07%)          0                  0            3,000,006 ( 0.10%)      1 ( 0.00%)      1 ( 0.00%)      for v in &values {
+ 18,000,000 ( 0.17%)  2 ( 0.00%)  2 ( 0.05%)   1,000,000 ( 0.03%)          0                  0            4,000,000 ( 0.13%)      0               0                   hist[(v % bins as u64) as usize] += 1;
+          .           .           .                    .                   .                  .                    .               .               .               }
+          4 ( 0.00%)  0           0                    2 ( 0.00%)          0                  0                    2 ( 0.00%)      1 ( 0.00%)      1 ( 0.00%)      hist
+          6 ( 0.00%)  0           0                    3 ( 0.00%)          1 ( 0.00%)         1 ( 0.00%)           0               0               0           }
+          .           .           .                    .                   .                  .                    .               .               .           
+          .           .           .                    .                   .                  .                    .               .               .           fn usage() -> ! {
+          .           .           .                    .                   .                  .                    .               .               .               eprintln!("usage: perflab [--n N] [--mandel WxH] [--iter K] [--sort LEN] [--ikj]");
+          .           .           .                    .                   .                  .                    .               .               .               process::exit(2);
+          .           .           .                    .                   .                  .                    .               .               .           }
+          .           .           .                    .                   .                  .                    .               .               .           
+         30 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                   20 ( 0.00%)      0               0           fn num<T: FromStr>(s: Option<&str>) -> T {
+         93 ( 0.00%)  2 ( 0.00%)  2 ( 0.05%)          17 ( 0.00%)          0                  0                   27 ( 0.00%)      0               0               s.and_then(|v| v.parse().ok()).unwrap_or_else(|| usage())
+         15 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)          10 ( 0.00%)          0                  0                    0               0               0           }
+          .           .           .                    .                   .                  .                    .               .               .           
+          5 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                    4 ( 0.00%)      0               0           fn parse_args() -> Config {
+         13 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                    7 ( 0.00%)      0               0               let mut cfg = Config {
+          .           .           .                    .                   .                  .                    .               .               .                   n: 1024,
+          .           .           .                    .                   .                  .                    .               .               .                   mandel_w: 2048,
+          .           .           .                    .                   .                  .                    .               .               .                   mandel_h: 2048,
+          .           .           .                    .                   .                  .                    .               .               .                   iter: 1024,
+          .           .           .                    .                   .                  .                    .               .               .                   sort_len: 20_000_000,
+          .           .           .                    .                   .                  .                    .               .               .                   ikj: false,
+          .           .           .                    .                   .                  .                    .               .               .               };
+         12 ( 0.00%)  2 ( 0.00%)  1 ( 0.02%)           3 ( 0.00%)          0                  0                    2 ( 0.00%)      0               0               let args: Vec<String> = env::args().skip(1).collect();
+         15 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                    8 ( 0.00%)      1 ( 0.00%)      0               let mut it = args.iter().map(String::as_str);
+         87 ( 0.00%)  2 ( 0.00%)  2 ( 0.05%)          13 ( 0.00%)          0                  0                   36 ( 0.00%)      0               0               while let Some(arg) = it.next() {
+          .           .           .                    .                   .                  .                    .               .               .                   match arg {
+         45 ( 0.00%)  2 ( 0.00%)  2 ( 0.05%)           0                   0                  0                    8 ( 0.00%)      1 ( 0.00%)      0                       "--n" => cfg.n = num(it.next()),
+         36 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                    7 ( 0.00%)      0               0                       "--iter" => cfg.iter = num(it.next()),
+         27 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                    6 ( 0.00%)      0               0                       "--sort" => cfg.sort_len = num(it.next()),
+          8 ( 0.00%)  0           0                    0                   0                  0                    1 ( 0.00%)      0               0                       "--mandel" => {
+         35 ( 0.00%)  3 ( 0.00%)  3 ( 0.07%)           6 ( 0.00%)          0                  0                   12 ( 0.00%)      1 ( 0.00%)      0                           let (w, h) = it.next().and_then(|v| v.split_once('x')).unwrap_or_else(|| usage());
+          4 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                    2 ( 0.00%)      0               0                           cfg.mandel_w = num(Some(w));
+          4 ( 0.00%)  0           0                    0                   0                  0                    2 ( 0.00%)      0               0                           cfg.mandel_h = num(Some(h));
+          1 ( 0.00%)  0           0                    0                   0                  0                    0               0               0                       }
+          .           .           .                    .                   .                  .                    .               .               .                       "--ikj" => cfg.ikj = true,
+          .           .           .                    .                   .                  .                    .               .               .                       _ => usage(),
+          .           .           .                    .                   .                  .                    .               .               .                   }
+          .           .           .                    .                   .                  .                    .               .               .               }
+          4 ( 0.00%)  0           0                    0                   0                  0                    0               0               0               cfg
+          6 ( 0.00%)  0           0                    3 ( 0.00%)          0                  0                    0               0               0           }
+          .           .           .                    .                   .                  .                    .               .               .           
+          4 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                    3 ( 0.00%)      0               0           fn main() {
+          4 ( 0.00%)  0           0                    0                   0                  0                    1 ( 0.00%)      0               0               let cfg = parse_args();
+          3 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           1 ( 0.00%)          0                  0                    2 ( 0.00%)      0               0               let n = cfg.n;
+          .           .           .                    .                   .                  .                    .               .               .               // Small integer multiples of 0.125 keep every partial sum exact in f32,
+          .           .           .                    .                   .                  .                    .               .               .               // so both loop orders produce bit-identical results.
+  1,048,585 ( 0.01%)  2 ( 0.00%)  1 ( 0.02%)     131,073 ( 0.00%)          1 ( 0.00%)         1 ( 0.00%)     262,145 ( 0.01%)      0               0               let a: Vec<f32> = (0..n * n).map(|i| (i % 7) as f32 * 0.5).collect();
+  1,048,589 ( 0.01%)  2 ( 0.00%)  2 ( 0.05%)     131,072 ( 0.00%)          0                  0              262,147 ( 0.01%)      1 ( 0.00%)      1 ( 0.00%)      let b: Vec<f32> = (0..n * n).map(|i| (i % 5) as f32 * 0.25).collect();
+         11 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           0                   0                  0                    1 ( 0.00%)      1 ( 0.00%)      1 ( 0.00%)      let mut c = vec![0.0f32; n * n];
+          3 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           1 ( 0.00%)          0                  0                    0               0               0               if cfg.ikj {
+          .           .           .                    .                   .                  .                    .               .               .                   matmul_ikj(&a, &b, &mut c, n);
+          .           .           .                    .                   .                  .                    .               .               .               } else {
+         18 ( 0.00%)  2 ( 0.00%)  2 ( 0.05%)           0                   0                  0                    6 ( 0.00%)      1 ( 0.00%)      1 ( 0.00%)          matmul_ijk(&a, &b, &mut c, n);
+          .           .           .                    .                   .                  .                    .               .               .               }
+    786,449 ( 0.01%)  3 ( 0.00%)  3 ( 0.07%)     196,608 ( 0.01%)      4,097 ( 0.02%)     4,082 ( 0.18%)     327,688 ( 0.01%)      4 ( 0.00%)      4 ( 0.00%)      let matmul_sum: f64 = c.iter().map(|&x| x as f64).sum();
+          .           .           .                    .                   .                  .                    .               .               .           
+          7 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           3 ( 0.00%)          2 ( 0.00%)         2 ( 0.00%)           2 ( 0.00%)      0               0               let mandel = mandelbrot(cfg.mandel_w, cfg.mandel_h, cfg.iter);
+          .           .           .                    .                   .                  .                    .               .               .           
+          8 ( 0.00%)  0           0                    1 ( 0.00%)          0                  0                    0               0               0               let hist = sort_hist(cfg.sort_len, 42, 256);
+      4,629 ( 0.00%)  2 ( 0.00%)  2 ( 0.05%)         768 ( 0.00%)          0                  0                2,054 ( 0.00%)      1 ( 0.00%)      1 ( 0.00%)      let sort_sum: u64 = hist.iter().enumerate().map(|(i, &h)| i as u64 * h).sum();
+          .           .           .                    .                   .                  .                    .               .               .           
+         32 ( 0.00%)  2 ( 0.00%)  2 ( 0.05%)           6 ( 0.00%)          0                  0                    6 ( 0.00%)      1 ( 0.00%)      1 ( 0.00%)      println!("matmul={matmul_sum} mandel={mandel} sort={sort_sum}");
+         15 ( 0.00%)  1 ( 0.00%)  1 ( 0.02%)           3 ( 0.00%)          1 ( 0.00%)         1 ( 0.00%)           0               0               0           }
+          .           .           .                    .                   .                  .                    .               .               .           
+          .           .           .                    .                   .                  .                    .               .               .           #[cfg(test)]
+          .           .           .                    .                   .                  .                    .               .               .           mod tests {
+          .           .           .                    .                   .                  .                    .               .               .               use super::*;
+          .           .           .                    .                   .                  .                    .               .               .           
+          .           .           .                    .                   .                  .                    .               .               .               fn fill(n: usize, seed: u32) -> Vec<f32> {
+          .           .           .                    .                   .                  .                    .               .               .                   (0..n * n).map(|i| ((i as u32 * 31 + seed) % 17) as f32 / 7.0).collect()
+          .           .           .                    .                   .                  .                    .               .               .               }
+-- line 147 ----------------------------------------
+
+524,482,679 ( 5.08%) 31 ( 0.00%) 31 ( 0.77%) 524,290,185 (17.57%)          3 ( 0.00%)         3 ( 0.00%)           0               0               0           <counts for unidentified lines in /lab/src/main.rs>
+
+--------------------------------------------------------------------------------
+The following files chosen for auto-annotation could not be found:
+--------------------------------------------------------------------------------
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/alloc/src/vec/mod.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/cmp.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/fmt/rt.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/hint.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/internal_macros.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/intrinsics/mod.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/iter/adapters/map.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/iter/range.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/iter/traits/iterator.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/mem/maybe_uninit.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/num/uint_macros.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ops/function.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/const_ptr.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/mod.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ptr/mut_ptr.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/index.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/iter/macros.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/sort/shared/smallsort.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/slice/sort/unstable/quicksort.rs
+  /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ub_checks.rs
+
+--------------------------------------------------------------------------------
+Ir                     I1mr        ILmr        Dr                   D1mr                DLmr               Dw                   D1mw            DLmw            
+--------------------------------------------------------------------------------
+1,306,257,627 (12.66%) 61 ( 0.01%) 59 ( 1.46%) 259,046,517 ( 8.68%) 16,857,928 (89.55%) 1,185,930 (51.14%) 282,791,207 ( 9.21%) 65,550 (24.74%) 65,547 (32.04%)  events annotated
+

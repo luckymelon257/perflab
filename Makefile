@@ -113,3 +113,7 @@ energy-run:
 
 compare:
 	scripts/compare.sh
+
+.PHONY: all
+
+all: check flamegraphs flamegraph-system stats asm compare

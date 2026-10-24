@@ -1,0 +1,20 @@
+# started on Sat Oct 24 13:42:08 2026
+
+
+ Performance counter stats for 'bin/o3-native/perflab --ikj' (5 runs):
+
+           1864.78 msec task-clock                       #    1.012 CPUs utilized            ( +-  0.47% )
+                 2      context-switches                 #    1.086 /sec                     ( +- 29.15% )
+                 0      cpu-migrations                   #    0.000 /sec                   
+             10606      page-faults                      #    5.758 K/sec                    ( +-  0.00% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+           1.84321 +- 0.00907 seconds time elapsed  ( +-  0.49% )
+

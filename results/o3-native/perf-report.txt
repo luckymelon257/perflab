@@ -1,0 +1,129 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu-clock:pppH'
+# Event count (approx.): 1875875874
+#
+# Overhead  Command  Shared Object      Symbol                                                      
+# ........  .......  .................  ............................................................
+#
+    81.00%  perflab  perflab            [.] perflab::mandelbrot
+            |
+            ---perflab::mandelbrot
+               perflab::main
+               perflab::main
+               std::sys::backtrace::__rust_begin_short_backtrace
+               std::rt::lang_start::{{closure}}
+               std::rt::lang_start_internal
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    10.30%  perflab  perflab            [.] core::slice::sort::unstable::quicksort::quicksort
+            |
+            ---core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               |          
+               |--9.23%--core::slice::sort::unstable::quicksort::quicksort
+               |          |          
+               |           --8.27%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          
+               |                      --7.47%--core::slice::sort::unstable::quicksort::quicksort
+               |                                |          
+               |                                |--5.92%--core::slice::sort::unstable::quicksort::quicksort
+               |                                |          |          
+               |                                |           --5.28%--core::slice::sort::unstable::quicksort::quicksort
+               |                                |                     |          
+               |                                |                     |--4.27%--core::slice::sort::unstable::quicksort::quicksort
+               |                                |                     |          |          
+               |                                |                     |           --3.42%--core::slice::sort::unstable::quicksort::quicksort
+               |                                |                     |                     |          
+               |                                |                     |                      --2.51%--core::slice::sort::unstable::quicksort::quicksort
+               |                                |                     |                                |          
+               |                                |                     |                                 --1.87%--core::slice::sort::unstable::quicksort::quicksort
+               |                                |                     |                                           |          
+               |                                |                     |                                            --1.12%--core::slice::sort::unstable::quicksort::quicksort
+               |                                |                     |          
+               |                                |                      --1.01%--perflab::sort_hist
+               |                                |                                perflab::main
+               |                                |                                std::sys::backtrace::__rust_begin_short_backtrace
+               |                                |                                std::rt::lang_start::{{closure}}
+               |                                |                                std::rt::lang_start_internal
+               |                                |                                main
+               |                                |                                __libc_start_call_main
+               |                                |                                __libc_start_main@@GLIBC_2.34
+               |                                |                                _start
+               |                                |          
+               |                                 --1.55%--perflab::sort_hist
+               |                                           perflab::main
+               |                                           std::sys::backtrace::__rust_begin_short_backtrace
+               |                                           std::rt::lang_start::{{closure}}
+               |                                           std::rt::lang_start_internal
+               |                                           main
+               |                                           __libc_start_call_main
+               |                                           __libc_start_main@@GLIBC_2.34
+               |                                           _start
+               |          
+                --1.07%--perflab::sort_hist
+                          perflab::main
+                          std::sys::backtrace::__rust_begin_short_backtrace
+                          std::rt::lang_start::{{closure}}
+                          std::rt::lang_start_internal
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     3.79%  perflab  perflab            [.] perflab::matmul_ikj
+            |
+            ---perflab::matmul_ikj
+               perflab::matmul_ikj
+               perflab::main
+               std::sys::backtrace::__rust_begin_short_backtrace
+               std::rt::lang_start::{{closure}}
+               std::rt::lang_start_internal
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     2.13%  perflab  perflab            [.] core::slice::sort::shared::smallsort::small_sort_network
+            |
+            ---core::slice::sort::shared::smallsort::small_sort_network
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               |          
+                --2.08%--core::slice::sort::unstable::quicksort::quicksort
+                          core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.97%--core::slice::sort::unstable::quicksort::quicksort
+                                     |          
+                                      --1.60%--core::slice::sort::unstable::quicksort::quicksort
+                                                |          
+                                                 --1.49%--core::slice::sort::unstable::quicksort::quicksort
+
+     1.87%  perflab  perflab            [.] perflab::sort_hist
+            |
+            ---perflab::sort_hist
+               perflab::sort_hist
+               perflab::main
+               std::sys::backtrace::__rust_begin_short_backtrace
+               std::rt::lang_start::{{closure}}
+               std::rt::lang_start_internal
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+
+
+#
+# (Tip: To record every process run by a user: perf record -u <user>)
+#

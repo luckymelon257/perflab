@@ -1,0 +1,20 @@
+# started on Sat Oct 24 13:39:24 2026
+
+
+ Performance counter stats for 'bin/o0/perflab' (5 runs):
+
+          23716.86 msec task-clock                       #    0.988 CPUs utilized            ( +-  0.50% )
+                 7      context-switches                 #    0.292 /sec                     ( +-142.04% )
+                 0      cpu-migrations                   #    0.000 /sec                   
+             10607      page-faults                      #  441.948 /sec                     ( +-  0.15% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+            24.004 +- 0.118 seconds time elapsed  ( +-  0.49% )
+

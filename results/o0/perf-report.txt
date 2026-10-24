@@ -1,0 +1,436 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 23K of event 'cpu-clock:pppH'
+# Event count (approx.): 23290290267
+#
+# Overhead  Command  Shared Object      Symbol                                                                                                   
+# ........  .......  .................  .........................................................................................................
+#
+    15.72%  perflab  perflab            [.] perflab::mandelbrot
+            |
+            ---perflab::mandelbrot
+               perflab::mandelbrot
+               perflab::main
+               core::ops::function::FnOnce::call_once
+               std::sys::backtrace::__rust_begin_short_backtrace
+               std::rt::lang_start::{{closure}}
+               std::rt::lang_start_internal
+               std::rt::lang_start
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    15.52%  perflab  perflab            [.] <core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+            |
+            ---<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+               |          
+                --15.51%--core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next
+                          |          
+                          |--8.80%--core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next
+                          |          |          
+                          |           --8.64%--perflab::matmul_ijk
+                          |                     perflab::main
+                          |                     core::ops::function::FnOnce::call_once
+                          |                     std::sys::backtrace::__rust_begin_short_backtrace
+                          |                     std::rt::lang_start::{{closure}}
+                          |                     std::rt::lang_start_internal
+                          |                     std::rt::lang_start
+                          |                     main
+                          |                     __libc_start_call_main
+                          |                     __libc_start_main@@GLIBC_2.34
+                          |                     _start
+                          |          
+                           --6.58%--perflab::matmul_ijk
+                                     perflab::main
+                                     core::ops::function::FnOnce::call_once
+                                     std::sys::backtrace::__rust_begin_short_backtrace
+                                     std::rt::lang_start::{{closure}}
+                                     std::rt::lang_start_internal
+                                     std::rt::lang_start
+                                     main
+                                     __libc_start_call_main
+                                     __libc_start_main@@GLIBC_2.34
+                                     _start
+
+    14.06%  perflab  perflab            [.] core::ptr::copy_nonoverlapping::precondition_check
+            |
+            ---core::ptr::copy_nonoverlapping::precondition_check
+               |          
+               |--11.05%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+               |          |          
+               |           --10.85%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+               |                     core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic
+               |                     core::slice::sort::unstable::quicksort::partition
+               |                     core::slice::sort::unstable::quicksort::quicksort
+               |                     |          
+               |                     |--9.74%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          |          
+               |                     |          |--8.71%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          |          |          
+               |                     |          |          |--7.65%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          |          |          |          
+               |                     |          |          |          |--6.60%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          |          |          |          |          
+               |                     |          |          |          |          |--5.57%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          |          |          |          |          |          
+               |                     |          |          |          |          |          |--4.50%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          |          |          |          |          |          |          
+               |                     |          |          |          |          |          |           --3.61%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          |          |          |          |          |                     |          
+               |                     |          |          |          |          |          |                     |--2.58%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          |          |          |          |          |                     |          |          
+               |                     |          |          |          |          |          |                     |           --1.78%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          |          |          |          |          |                     |                     |          
+               |                     |          |          |          |          |          |                     |                      --1.07%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          |          |          |          |          |                     |          
+               |                     |          |          |          |          |          |                      --1.02%--core::slice::sort::unstable::ipnsort
+               |                     |          |          |          |          |          |                                core::slice::<impl [T]>::sort_unstable
+               |                     |          |          |          |          |          |                                perflab::sort_hist
+               |                     |          |          |          |          |          |                                perflab::main
+               |                     |          |          |          |          |          |                                core::ops::function::FnOnce::call_once
+               |                     |          |          |          |          |          |                                std::sys::backtrace::__rust_begin_short_backtrace
+               |                     |          |          |          |          |          |                                std::rt::lang_start::{{closure}}
+               |                     |          |          |          |          |          |                                std::rt::lang_start_internal
+               |                     |          |          |          |          |          |                                std::rt::lang_start
+               |                     |          |          |          |          |          |                                main
+               |                     |          |          |          |          |          |                                __libc_start_call_main
+               |                     |          |          |          |          |          |                                __libc_start_main@@GLIBC_2.34
+               |                     |          |          |          |          |          |                                _start
+               |                     |          |          |          |          |          |          
+               |                     |          |          |          |          |           --1.08%--core::slice::sort::unstable::ipnsort
+               |                     |          |          |          |          |                     core::slice::<impl [T]>::sort_unstable
+               |                     |          |          |          |          |                     perflab::sort_hist
+               |                     |          |          |          |          |                     perflab::main
+               |                     |          |          |          |          |                     core::ops::function::FnOnce::call_once
+               |                     |          |          |          |          |                     std::sys::backtrace::__rust_begin_short_backtrace
+               |                     |          |          |          |          |                     std::rt::lang_start::{{closure}}
+               |                     |          |          |          |          |                     std::rt::lang_start_internal
+               |                     |          |          |          |          |                     std::rt::lang_start
+               |                     |          |          |          |          |                     main
+               |                     |          |          |          |          |                     __libc_start_call_main
+               |                     |          |          |          |          |                     __libc_start_main@@GLIBC_2.34
+               |                     |          |          |          |          |                     _start
+               |                     |          |          |          |          |          
+               |                     |          |          |          |           --1.03%--core::slice::sort::unstable::ipnsort
+               |                     |          |          |          |                     core::slice::<impl [T]>::sort_unstable
+               |                     |          |          |          |                     perflab::sort_hist
+               |                     |          |          |          |                     perflab::main
+               |                     |          |          |          |                     core::ops::function::FnOnce::call_once
+               |                     |          |          |          |                     std::sys::backtrace::__rust_begin_short_backtrace
+               |                     |          |          |          |                     std::rt::lang_start::{{closure}}
+               |                     |          |          |          |                     std::rt::lang_start_internal
+               |                     |          |          |          |                     std::rt::lang_start
+               |                     |          |          |          |                     main
+               |                     |          |          |          |                     __libc_start_call_main
+               |                     |          |          |          |                     __libc_start_main@@GLIBC_2.34
+               |                     |          |          |          |                     _start
+               |                     |          |          |          |          
+               |                     |          |          |           --1.04%--core::slice::sort::unstable::ipnsort
+               |                     |          |          |                     core::slice::<impl [T]>::sort_unstable
+               |                     |          |          |                     perflab::sort_hist
+               |                     |          |          |                     perflab::main
+               |                     |          |          |                     core::ops::function::FnOnce::call_once
+               |                     |          |          |                     std::sys::backtrace::__rust_begin_short_backtrace
+               |                     |          |          |                     std::rt::lang_start::{{closure}}
+               |                     |          |          |                     std::rt::lang_start_internal
+               |                     |          |          |                     std::rt::lang_start
+               |                     |          |          |                     main
+               |                     |          |          |                     __libc_start_call_main
+               |                     |          |          |                     __libc_start_main@@GLIBC_2.34
+               |                     |          |          |                     _start
+               |                     |          |          |          
+               |                     |          |           --1.06%--core::slice::sort::unstable::ipnsort
+               |                     |          |                     core::slice::<impl [T]>::sort_unstable
+               |                     |          |                     perflab::sort_hist
+               |                     |          |                     perflab::main
+               |                     |          |                     core::ops::function::FnOnce::call_once
+               |                     |          |                     std::sys::backtrace::__rust_begin_short_backtrace
+               |                     |          |                     std::rt::lang_start::{{closure}}
+               |                     |          |                     std::rt::lang_start_internal
+               |                     |          |                     std::rt::lang_start
+               |                     |          |                     main
+               |                     |          |                     __libc_start_call_main
+               |                     |          |                     __libc_start_main@@GLIBC_2.34
+               |                     |          |                     _start
+               |                     |          |          
+               |                     |           --1.04%--core::slice::sort::unstable::ipnsort
+               |                     |                     core::slice::<impl [T]>::sort_unstable
+               |                     |                     perflab::sort_hist
+               |                     |                     perflab::main
+               |                     |                     core::ops::function::FnOnce::call_once
+               |                     |                     std::sys::backtrace::__rust_begin_short_backtrace
+               |                     |                     std::rt::lang_start::{{closure}}
+               |                     |                     std::rt::lang_start_internal
+               |                     |                     std::rt::lang_start
+               |                     |                     main
+               |                     |                     __libc_start_call_main
+               |                     |                     __libc_start_main@@GLIBC_2.34
+               |                     |                     _start
+               |                     |          
+               |                      --1.10%--core::slice::sort::unstable::ipnsort
+               |                                core::slice::<impl [T]>::sort_unstable
+               |                                perflab::sort_hist
+               |                                perflab::main
+               |                                core::ops::function::FnOnce::call_once
+               |                                std::sys::backtrace::__rust_begin_short_backtrace
+               |                                std::rt::lang_start::{{closure}}
+               |                                std::rt::lang_start_internal
+               |                                std::rt::lang_start
+               |                                main
+               |                                __libc_start_call_main
+               |                                __libc_start_main@@GLIBC_2.34
+               |                                _start
+               |          
+                --1.58%--core::slice::sort::shared::smallsort::swap_if_less
+                          |          
+                           --1.55%--core::slice::sort::shared::smallsort::swap_if_less
+
+    10.94%  perflab  perflab            [.] perflab::matmul_ijk
+            |
+            ---perflab::matmul_ijk
+               perflab::matmul_ijk
+               perflab::main
+               core::ops::function::FnOnce::call_once
+               std::sys::backtrace::__rust_begin_short_backtrace
+               std::rt::lang_start::{{closure}}
+               std::rt::lang_start_internal
+               std::rt::lang_start
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     9.00%  perflab  perflab            [.] core::num::<impl usize>::unchecked_add::precondition_check
+            |
+            ---core::num::<impl usize>::unchecked_add::precondition_check
+               |          
+                --8.96%--<usize as core::iter::range::Step>::forward_unchecked
+                          |          
+                          |--5.40%--<usize as core::iter::range::Step>::forward_unchecked
+                          |          <core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+                          |          core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next
+                          |          |          
+                          |           --5.30%--perflab::matmul_ijk
+                          |                     perflab::main
+                          |                     core::ops::function::FnOnce::call_once
+                          |                     std::sys::backtrace::__rust_begin_short_backtrace
+                          |                     std::rt::lang_start::{{closure}}
+                          |                     std::rt::lang_start_internal
+                          |                     std::rt::lang_start
+                          |                     main
+                          |                     __libc_start_call_main
+                          |                     __libc_start_main@@GLIBC_2.34
+                          |                     _start
+                          |          
+                           --3.56%--<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+                                     core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next
+                                     |          
+                                      --3.55%--perflab::matmul_ijk
+                                                perflab::main
+                                                core::ops::function::FnOnce::call_once
+                                                std::sys::backtrace::__rust_begin_short_backtrace
+                                                std::rt::lang_start::{{closure}}
+                                                std::rt::lang_start_internal
+                                                std::rt::lang_start
+                                                main
+                                                __libc_start_call_main
+                                                __libc_start_main@@GLIBC_2.34
+                                                _start
+
+     6.89%  perflab  perflab            [.] core::ptr::copy::precondition_check
+            |
+            ---core::ptr::copy::precondition_check
+               |          
+                --5.89%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+                          |          
+                          |--4.77%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+                          |          core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic
+                          |          core::slice::sort::unstable::quicksort::partition
+                          |          core::slice::sort::unstable::quicksort::quicksort
+                          |          |          
+                          |           --4.29%--core::slice::sort::unstable::quicksort::quicksort
+                          |                     |          
+                          |                      --3.86%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                |          
+                          |                                 --3.41%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                           |          
+                          |                                            --2.95%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                      |          
+                          |                                                       --2.46%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                 |          
+                          |                                                                  --1.96%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                            |          
+                          |                                                                             --1.51%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                       |          
+                          |                                                                                        --1.12%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.12%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic
+                                     core::slice::sort::unstable::quicksort::partition
+                                     core::slice::sort::unstable::quicksort::quicksort
+
+     6.13%  perflab  perflab            [.] <usize as core::iter::range::Step>::forward_unchecked
+            |
+            ---<usize as core::iter::range::Step>::forward_unchecked
+               |          
+                --6.12%--<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+                          |          
+                          |--4.02%--<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+                          |          core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next
+                          |          |          
+                          |           --3.95%--perflab::matmul_ijk
+                          |                     perflab::main
+                          |                     core::ops::function::FnOnce::call_once
+                          |                     std::sys::backtrace::__rust_begin_short_backtrace
+                          |                     std::rt::lang_start::{{closure}}
+                          |                     std::rt::lang_start_internal
+                          |                     std::rt::lang_start
+                          |                     main
+                          |                     __libc_start_call_main
+                          |                     __libc_start_main@@GLIBC_2.34
+                          |                     _start
+                          |          
+                           --2.11%--core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next
+                                     |          
+                                      --2.04%--perflab::matmul_ijk
+                                                perflab::main
+                                                core::ops::function::FnOnce::call_once
+                                                std::sys::backtrace::__rust_begin_short_backtrace
+                                                std::rt::lang_start::{{closure}}
+                                                std::rt::lang_start_internal
+                                                std::rt::lang_start
+                                                main
+                                                __libc_start_call_main
+                                                __libc_start_main@@GLIBC_2.34
+                                                _start
+
+     5.85%  perflab  perflab            [.] core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+            |
+            ---core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+               |          
+               |--3.96%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+               |          core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic
+               |          core::slice::sort::unstable::quicksort::partition
+               |          core::slice::sort::unstable::quicksort::quicksort
+               |          |          
+               |           --3.60%--core::slice::sort::unstable::quicksort::quicksort
+               |                     |          
+               |                      --3.18%--core::slice::sort::unstable::quicksort::quicksort
+               |                                |          
+               |                                 --2.81%--core::slice::sort::unstable::quicksort::quicksort
+               |                                           |          
+               |                                            --2.35%--core::slice::sort::unstable::quicksort::quicksort
+               |                                                      |          
+               |                                                       --1.98%--core::slice::sort::unstable::quicksort::quicksort
+               |                                                                 |          
+               |                                                                  --1.63%--core::slice::sort::unstable::quicksort::quicksort
+               |                                                                            |          
+               |                                                                             --1.29%--core::slice::sort::unstable::quicksort::quicksort
+               |          
+                --1.89%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic
+                          |          
+                           --1.35%--core::slice::sort::unstable::quicksort::partition
+                                     core::slice::sort::unstable::quicksort::quicksort
+                                     |          
+                                      --1.21%--core::slice::sort::unstable::quicksort::quicksort
+                                                |          
+                                                 --1.10%--core::slice::sort::unstable::quicksort::quicksort
+
+     4.85%  perflab  perflab            [.] core::ub_checks::maybe_is_nonoverlapping::runtime
+            |
+            ---core::ub_checks::maybe_is_nonoverlapping::runtime
+               core::ptr::copy_nonoverlapping::precondition_check
+               |          
+               |--3.59%--core::ptr::copy_nonoverlapping::precondition_check
+               |          |          
+               |           --3.00%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+               |                     core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic
+               |                     core::slice::sort::unstable::quicksort::partition
+               |                     core::slice::sort::unstable::quicksort::quicksort
+               |                     |          
+               |                      --2.70%--core::slice::sort::unstable::quicksort::quicksort
+               |                                |          
+               |                                 --2.38%--core::slice::sort::unstable::quicksort::quicksort
+               |                                           |          
+               |                                            --2.02%--core::slice::sort::unstable::quicksort::quicksort
+               |                                                      |          
+               |                                                       --1.74%--core::slice::sort::unstable::quicksort::quicksort
+               |                                                                 |          
+               |                                                                  --1.52%--core::slice::sort::unstable::quicksort::quicksort
+               |                                                                            |          
+               |                                                                             --1.22%--core::slice::sort::unstable::quicksort::quicksort
+               |          
+                --1.04%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+                          core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic
+                          core::slice::sort::unstable::quicksort::partition
+                          core::slice::sort::unstable::quicksort::quicksort
+
+     3.81%  perflab  perflab            [.] core::ops::function::FnMut::call_mut
+            |
+            ---core::ops::function::FnMut::call_mut
+               |          
+                --3.16%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+                          |          
+                          |--1.82%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic
+                          |          core::slice::sort::unstable::quicksort::partition
+                          |          core::slice::sort::unstable::quicksort::quicksort
+                          |          |          
+                          |           --1.68%--core::slice::sort::unstable::quicksort::quicksort
+                          |                     |          
+                          |                      --1.54%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                |          
+                          |                                 --1.41%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                           |          
+                          |                                            --1.16%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.35%--core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic::{{closure}}
+                                     core::slice::sort::unstable::quicksort::partition_lomuto_branchless_cyclic
+                                     core::slice::sort::unstable::quicksort::partition
+                                     core::slice::sort::unstable::quicksort::quicksort
+                                     |          
+                                      --1.17%--core::slice::sort::unstable::quicksort::quicksort
+                                                |          
+                                                 --1.05%--core::slice::sort::unstable::quicksort::quicksort
+
+     2.37%  perflab  perflab            [.] core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next
+            |
+            ---core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next
+               |          
+               |--1.32%--perflab::matmul_ijk
+               |          perflab::main
+               |          core::ops::function::FnOnce::call_once
+               |          std::sys::backtrace::__rust_begin_short_backtrace
+               |          std::rt::lang_start::{{closure}}
+               |          std::rt::lang_start_internal
+               |          std::rt::lang_start
+               |          main
+               |          __libc_start_call_main
+               |          __libc_start_main@@GLIBC_2.34
+               |          _start
+               |          
+                --1.04%--core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::Range<A>>::next
+                          |          
+                           --1.02%--perflab::matmul_ijk
+                                     perflab::main
+                                     core::ops::function::FnOnce::call_once
+                                     std::sys::backtrace::__rust_begin_short_backtrace
+                                     std::rt::lang_start::{{closure}}
+                                     std::rt::lang_start_internal
+                                     std::rt::lang_start
+                                     main
+                                     __libc_start_call_main
+                                     __libc_start_main@@GLIBC_2.34
+                                     _start
+
+     1.12%  perflab  perflab            [.] core::slice::sort::shared::smallsort::swap_if_less
+            |
+            ---core::slice::sort::shared::smallsort::swap_if_less
+
+
+
+#
+# (Tip: Save output of perf stat using: perf stat record <target workload>)
+#

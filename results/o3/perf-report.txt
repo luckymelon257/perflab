@@ -1,0 +1,97 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu-clock:pppH'
+# Event count (approx.): 2863863861
+#
+# Overhead  Command  Shared Object      Symbol                                                      
+# ........  .......  .................  ............................................................
+#
+    58.13%  perflab  perflab            [.] perflab::mandelbrot
+            |
+            ---perflab::mandelbrot
+               perflab::main
+               perflab::main
+               std::sys::backtrace::__rust_begin_short_backtrace
+               std::rt::lang_start::{{closure}}
+               std::rt::lang_start_internal
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    30.37%  perflab  perflab            [.] perflab::matmul_ijk
+            |
+            ---perflab::matmul_ijk
+               perflab::main
+               perflab::main
+               std::sys::backtrace::__rust_begin_short_backtrace
+               std::rt::lang_start::{{closure}}
+               std::rt::lang_start_internal
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     7.27%  perflab  perflab            [.] core::slice::sort::unstable::quicksort::quicksort
+            |
+            ---core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               |          
+                --6.43%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --5.56%--core::slice::sort::unstable::quicksort::quicksort
+                                     |          
+                                      --4.82%--core::slice::sort::unstable::quicksort::quicksort
+                                                |          
+                                                 --4.05%--core::slice::sort::unstable::quicksort::quicksort
+                                                           |          
+                                                            --3.36%--core::slice::sort::unstable::quicksort::quicksort
+                                                                      |          
+                                                                       --2.87%--core::slice::sort::unstable::quicksort::quicksort
+                                                                                 |          
+                                                                                  --2.20%--core::slice::sort::unstable::quicksort::quicksort
+                                                                                            |          
+                                                                                             --1.75%--core::slice::sort::unstable::quicksort::quicksort
+                                                                                                       |          
+                                                                                                        --1.19%--core::slice::sort::unstable::quicksort::quicksort
+
+     1.92%  perflab  perflab            [.] core::slice::sort::shared::smallsort::small_sort_network
+            |
+            ---core::slice::sort::shared::smallsort::small_sort_network
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               core::slice::sort::unstable::quicksort::quicksort
+               |          
+                --1.89%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.82%--core::slice::sort::unstable::quicksort::quicksort
+                                     |          
+                                      --1.71%--core::slice::sort::unstable::quicksort::quicksort
+                                                |          
+                                                 --1.50%--core::slice::sort::unstable::quicksort::quicksort
+
+     1.33%  perflab  perflab            [.] perflab::sort_hist
+            |
+            ---perflab::sort_hist
+               perflab::sort_hist
+               perflab::main
+               std::sys::backtrace::__rust_begin_short_backtrace
+               std::rt::lang_start::{{closure}}
+               std::rt::lang_start_internal
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+
+
+#
+# (Tip: Create an archive with symtabs to analyse on other machine: perf archive)
+#

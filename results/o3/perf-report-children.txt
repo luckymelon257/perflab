@@ -1,0 +1,481 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu-clock:pppH'
+# Event count (approx.): 2863863861
+#
+# Children      Self  Command  Shared Object      Symbol                                                      
+# ........  ........  .......  .................  ............................................................
+#
+   100.00%     0.00%  perflab  perflab            [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               std::rt::lang_start_internal
+               std::rt::lang_start::{{closure}}
+               std::sys::backtrace::__rust_begin_short_backtrace
+               perflab::main
+               |          
+               |--88.57%--perflab::main
+               |          |          
+               |          |--58.13%--perflab::mandelbrot
+               |          |          
+               |           --30.37%--perflab::matmul_ijk
+               |          
+                --11.43%--perflab::sort_hist
+                          |          
+                          |--9.51%--core::slice::sort::unstable::quicksort::quicksort
+                          |          core::slice::sort::unstable::quicksort::quicksort
+                          |          |          
+                          |           --8.67%--core::slice::sort::unstable::quicksort::quicksort
+                          |                     |          
+                          |                      --7.79%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                |          
+                          |                                 --7.06%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                           |          
+                          |                                            --6.22%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                      |          
+                          |                                                       --5.42%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                 |          
+                          |                                                                  --4.86%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                            |          
+                          |                                                                             --4.12%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                       |          
+                          |                                                                                        --3.57%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                  |          
+                          |                                                                                                   --2.76%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                             |          
+                          |                                                                                                              --1.78%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.85%--perflab::sort_hist
+
+   100.00%     0.00%  perflab  libc.so.6          [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               std::rt::lang_start_internal
+               std::rt::lang_start::{{closure}}
+               std::sys::backtrace::__rust_begin_short_backtrace
+               perflab::main
+               |          
+               |--88.57%--perflab::main
+               |          |          
+               |          |--58.13%--perflab::mandelbrot
+               |          |          
+               |           --30.37%--perflab::matmul_ijk
+               |          
+                --11.43%--perflab::sort_hist
+                          |          
+                          |--9.51%--core::slice::sort::unstable::quicksort::quicksort
+                          |          core::slice::sort::unstable::quicksort::quicksort
+                          |          |          
+                          |           --8.67%--core::slice::sort::unstable::quicksort::quicksort
+                          |                     |          
+                          |                      --7.79%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                |          
+                          |                                 --7.06%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                           |          
+                          |                                            --6.22%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                      |          
+                          |                                                       --5.42%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                 |          
+                          |                                                                  --4.86%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                            |          
+                          |                                                                             --4.12%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                       |          
+                          |                                                                                        --3.57%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                  |          
+                          |                                                                                                   --2.76%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                             |          
+                          |                                                                                                              --1.78%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.85%--perflab::sort_hist
+
+   100.00%     0.00%  perflab  libc.so.6          [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               main
+               std::rt::lang_start_internal
+               std::rt::lang_start::{{closure}}
+               std::sys::backtrace::__rust_begin_short_backtrace
+               perflab::main
+               |          
+               |--88.57%--perflab::main
+               |          |          
+               |          |--58.13%--perflab::mandelbrot
+               |          |          
+               |           --30.37%--perflab::matmul_ijk
+               |          
+                --11.43%--perflab::sort_hist
+                          |          
+                          |--9.51%--core::slice::sort::unstable::quicksort::quicksort
+                          |          core::slice::sort::unstable::quicksort::quicksort
+                          |          |          
+                          |           --8.67%--core::slice::sort::unstable::quicksort::quicksort
+                          |                     |          
+                          |                      --7.79%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                |          
+                          |                                 --7.06%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                           |          
+                          |                                            --6.22%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                      |          
+                          |                                                       --5.42%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                 |          
+                          |                                                                  --4.86%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                            |          
+                          |                                                                             --4.12%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                       |          
+                          |                                                                                        --3.57%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                  |          
+                          |                                                                                                   --2.76%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                             |          
+                          |                                                                                                              --1.78%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.85%--perflab::sort_hist
+
+   100.00%     0.00%  perflab  perflab            [.] main
+            |
+            ---main
+               std::rt::lang_start_internal
+               std::rt::lang_start::{{closure}}
+               std::sys::backtrace::__rust_begin_short_backtrace
+               perflab::main
+               |          
+               |--88.57%--perflab::main
+               |          |          
+               |          |--58.13%--perflab::mandelbrot
+               |          |          
+               |           --30.37%--perflab::matmul_ijk
+               |          
+                --11.43%--perflab::sort_hist
+                          |          
+                          |--9.51%--core::slice::sort::unstable::quicksort::quicksort
+                          |          core::slice::sort::unstable::quicksort::quicksort
+                          |          |          
+                          |           --8.67%--core::slice::sort::unstable::quicksort::quicksort
+                          |                     |          
+                          |                      --7.79%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                |          
+                          |                                 --7.06%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                           |          
+                          |                                            --6.22%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                      |          
+                          |                                                       --5.42%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                 |          
+                          |                                                                  --4.86%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                            |          
+                          |                                                                             --4.12%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                       |          
+                          |                                                                                        --3.57%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                  |          
+                          |                                                                                                   --2.76%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                             |          
+                          |                                                                                                              --1.78%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.85%--perflab::sort_hist
+
+   100.00%     0.00%  perflab  perflab            [.] std::rt::lang_start_internal
+            |
+            ---std::rt::lang_start_internal
+               std::rt::lang_start::{{closure}}
+               std::sys::backtrace::__rust_begin_short_backtrace
+               perflab::main
+               |          
+               |--88.57%--perflab::main
+               |          |          
+               |          |--58.13%--perflab::mandelbrot
+               |          |          
+               |           --30.37%--perflab::matmul_ijk
+               |          
+                --11.43%--perflab::sort_hist
+                          |          
+                          |--9.51%--core::slice::sort::unstable::quicksort::quicksort
+                          |          core::slice::sort::unstable::quicksort::quicksort
+                          |          |          
+                          |           --8.67%--core::slice::sort::unstable::quicksort::quicksort
+                          |                     |          
+                          |                      --7.79%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                |          
+                          |                                 --7.06%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                           |          
+                          |                                            --6.22%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                      |          
+                          |                                                       --5.42%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                 |          
+                          |                                                                  --4.86%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                            |          
+                          |                                                                             --4.12%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                       |          
+                          |                                                                                        --3.57%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                  |          
+                          |                                                                                                   --2.76%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                             |          
+                          |                                                                                                              --1.78%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.85%--perflab::sort_hist
+
+   100.00%     0.00%  perflab  perflab            [.] std::rt::lang_start::{{closure}}
+            |
+            ---std::rt::lang_start::{{closure}}
+               std::sys::backtrace::__rust_begin_short_backtrace
+               perflab::main
+               |          
+               |--88.57%--perflab::main
+               |          |          
+               |          |--58.13%--perflab::mandelbrot
+               |          |          
+               |           --30.37%--perflab::matmul_ijk
+               |          
+                --11.43%--perflab::sort_hist
+                          |          
+                          |--9.51%--core::slice::sort::unstable::quicksort::quicksort
+                          |          core::slice::sort::unstable::quicksort::quicksort
+                          |          |          
+                          |           --8.67%--core::slice::sort::unstable::quicksort::quicksort
+                          |                     |          
+                          |                      --7.79%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                |          
+                          |                                 --7.06%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                           |          
+                          |                                            --6.22%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                      |          
+                          |                                                       --5.42%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                 |          
+                          |                                                                  --4.86%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                            |          
+                          |                                                                             --4.12%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                       |          
+                          |                                                                                        --3.57%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                  |          
+                          |                                                                                                   --2.76%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                             |          
+                          |                                                                                                              --1.78%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.85%--perflab::sort_hist
+
+   100.00%     0.00%  perflab  perflab            [.] std::sys::backtrace::__rust_begin_short_backtrace
+            |
+            ---std::sys::backtrace::__rust_begin_short_backtrace
+               perflab::main
+               |          
+               |--88.57%--perflab::main
+               |          |          
+               |          |--58.13%--perflab::mandelbrot
+               |          |          
+               |           --30.37%--perflab::matmul_ijk
+               |          
+                --11.43%--perflab::sort_hist
+                          |          
+                          |--9.51%--core::slice::sort::unstable::quicksort::quicksort
+                          |          core::slice::sort::unstable::quicksort::quicksort
+                          |          |          
+                          |           --8.67%--core::slice::sort::unstable::quicksort::quicksort
+                          |                     |          
+                          |                      --7.79%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                |          
+                          |                                 --7.06%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                           |          
+                          |                                            --6.22%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                      |          
+                          |                                                       --5.42%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                 |          
+                          |                                                                  --4.86%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                            |          
+                          |                                                                             --4.12%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                       |          
+                          |                                                                                        --3.57%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                  |          
+                          |                                                                                                   --2.76%--core::slice::sort::unstable::quicksort::quicksort
+                          |                                                                                                             |          
+                          |                                                                                                              --1.78%--core::slice::sort::unstable::quicksort::quicksort
+                          |          
+                           --1.85%--perflab::sort_hist
+
+   100.00%     0.07%  perflab  perflab            [.] perflab::main
+            |          
+             --99.93%--perflab::main
+                       |          
+                       |--88.50%--perflab::main
+                       |          |          
+                       |          |--58.13%--perflab::mandelbrot
+                       |          |          
+                       |           --30.37%--perflab::matmul_ijk
+                       |          
+                        --11.43%--perflab::sort_hist
+                                  |          
+                                  |--9.51%--core::slice::sort::unstable::quicksort::quicksort
+                                  |          core::slice::sort::unstable::quicksort::quicksort
+                                  |          |          
+                                  |           --8.67%--core::slice::sort::unstable::quicksort::quicksort
+                                  |                     |          
+                                  |                      --7.79%--core::slice::sort::unstable::quicksort::quicksort
+                                  |                                |          
+                                  |                                 --7.06%--core::slice::sort::unstable::quicksort::quicksort
+                                  |                                           |          
+                                  |                                            --6.22%--core::slice::sort::unstable::quicksort::quicksort
+                                  |                                                      |          
+                                  |                                                       --5.42%--core::slice::sort::unstable::quicksort::quicksort
+                                  |                                                                 |          
+                                  |                                                                  --4.86%--core::slice::sort::unstable::quicksort::quicksort
+                                  |                                                                            |          
+                                  |                                                                             --4.12%--core::slice::sort::unstable::quicksort::quicksort
+                                  |                                                                                       |          
+                                  |                                                                                        --3.57%--core::slice::sort::unstable::quicksort::quicksort
+                                  |                                                                                                  |          
+                                  |                                                                                                   --2.76%--core::slice::sort::unstable::quicksort::quicksort
+                                  |                                                                                                             |          
+                                  |                                                                                                              --1.78%--core::slice::sort::unstable::quicksort::quicksort
+                                  |          
+                                   --1.85%--perflab::sort_hist
+
+    58.13%    58.13%  perflab  perflab            [.] perflab::mandelbrot
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               std::rt::lang_start_internal
+               std::rt::lang_start::{{closure}}
+               std::sys::backtrace::__rust_begin_short_backtrace
+               perflab::main
+               perflab::main
+               perflab::mandelbrot
+
+    30.37%    30.37%  perflab  perflab            [.] perflab::matmul_ijk
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               std::rt::lang_start_internal
+               std::rt::lang_start::{{closure}}
+               std::sys::backtrace::__rust_begin_short_backtrace
+               perflab::main
+               perflab::main
+               perflab::matmul_ijk
+
+    11.43%     1.33%  perflab  perflab            [.] perflab::sort_hist
+            |          
+            |--10.10%--perflab::sort_hist
+            |          |          
+            |           --9.51%--core::slice::sort::unstable::quicksort::quicksort
+            |                     core::slice::sort::unstable::quicksort::quicksort
+            |                     |          
+            |                      --8.67%--core::slice::sort::unstable::quicksort::quicksort
+            |                                |          
+            |                                 --7.79%--core::slice::sort::unstable::quicksort::quicksort
+            |                                           |          
+            |                                            --7.06%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                      |          
+            |                                                       --6.22%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                                 |          
+            |                                                                  --5.42%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                                            |          
+            |                                                                             --4.86%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                                                       |          
+            |                                                                                        --4.12%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                                                                  |          
+            |                                                                                                   --3.57%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                                                                             |          
+            |                                                                                                              --2.76%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                                                                                        |          
+            |                                                                                                                         --1.78%--core::slice::sort::unstable::quicksort::quicksort
+            |          
+             --1.33%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       std::rt::lang_start_internal
+                       std::rt::lang_start::{{closure}}
+                       std::sys::backtrace::__rust_begin_short_backtrace
+                       perflab::main
+                       perflab::sort_hist
+                       perflab::sort_hist
+
+     9.51%     7.27%  perflab  perflab            [.] core::slice::sort::unstable::quicksort::quicksort
+            |          
+            |--7.27%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          std::rt::lang_start_internal
+            |          std::rt::lang_start::{{closure}}
+            |          std::sys::backtrace::__rust_begin_short_backtrace
+            |          perflab::main
+            |          perflab::sort_hist
+            |          core::slice::sort::unstable::quicksort::quicksort
+            |          core::slice::sort::unstable::quicksort::quicksort
+            |          |          
+            |           --6.43%--core::slice::sort::unstable::quicksort::quicksort
+            |                     |          
+            |                      --5.56%--core::slice::sort::unstable::quicksort::quicksort
+            |                                |          
+            |                                 --4.82%--core::slice::sort::unstable::quicksort::quicksort
+            |                                           |          
+            |                                            --4.05%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                      |          
+            |                                                       --3.36%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                                 |          
+            |                                                                  --2.87%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                                            |          
+            |                                                                             --2.20%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                                                       |          
+            |                                                                                        --1.75%--core::slice::sort::unstable::quicksort::quicksort
+            |                                                                                                  |          
+            |                                                                                                   --1.19%--core::slice::sort::unstable::quicksort::quicksort
+            |          
+             --2.24%--core::slice::sort::unstable::quicksort::quicksort
+                       core::slice::sort::unstable::quicksort::quicksort
+                       core::slice::sort::unstable::quicksort::quicksort
+                       core::slice::sort::unstable::quicksort::quicksort
+                       core::slice::sort::unstable::quicksort::quicksort
+                       |          
+                        --2.17%--core::slice::sort::unstable::quicksort::quicksort
+                                  |          
+                                   --2.06%--core::slice::sort::unstable::quicksort::quicksort
+                                             |          
+                                              --1.99%--core::slice::sort::unstable::quicksort::quicksort
+                                                        |          
+                                                         --1.92%--core::slice::sort::unstable::quicksort::quicksort
+                                                                   |          
+                                                                    --1.82%--core::slice::sort::unstable::quicksort::quicksort
+                                                                              |          
+                                                                               --1.57%--core::slice::sort::unstable::quicksort::quicksort
+
+     1.96%     1.92%  perflab  perflab            [.] core::slice::sort::shared::smallsort::small_sort_network
+            |          
+             --1.92%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       std::rt::lang_start_internal
+                       std::rt::lang_start::{{closure}}
+                       std::sys::backtrace::__rust_begin_short_backtrace
+                       perflab::main
+                       perflab::sort_hist
+                       core::slice::sort::unstable::quicksort::quicksort
+                       core::slice::sort::unstable::quicksort::quicksort
+                       core::slice::sort::unstable::quicksort::quicksort
+                       core::slice::sort::unstable::quicksort::quicksort
+                       core::slice::sort::unstable::quicksort::quicksort
+                       core::slice::sort::unstable::quicksort::quicksort
+                       core::slice::sort::unstable::quicksort::quicksort
+                       |          
+                        --1.89%--core::slice::sort::unstable::quicksort::quicksort
+                                  |          
+                                   --1.82%--core::slice::sort::unstable::quicksort::quicksort
+                                             |          
+                                              --1.71%--core::slice::sort::unstable::quicksort::quicksort
+                                                        |          
+                                                         --1.50%--core::slice::sort::unstable::quicksort::quicksort
+
+
+
+#
+# (Tip: Create an archive with symtabs to analyse on other machine: perf archive)
+#
